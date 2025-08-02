@@ -304,128 +304,27 @@ function stopCarouselAutoplay() {
 }
 
 function openGamePage(gameType) {
-    const game = gameData[gameType];
+    // Simple redirect to actual HTML files - works perfectly on mobile
+    const gamePageMap = {
+        'pubg': 'pubg.html',
+        'freefire': 'freefire.html',
+        'supercell': 'supercell.html',
+        'netflix': 'netflix.html',
+        'unipin': 'unipin.html',
+        'deltaforce': 'deltaforce.html',
+        'bloodstrike': 'bloodstrike.html',
+        'pubgvoucher': 'pubgvoucher.html'
+    };
     
-    // Create game page HTML
-    const gamePageHTML = `
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>${game.name} - GameShop</title>
-            <link rel="stylesheet" href="styles.css">
-            <link rel="stylesheet" href="game-page.css">
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-        </head>
-        <body>
-            <header class="header">
-                <div class="container">
-                    <div class="header-top">
-                        <div class="contact-info">
-                            <a href="index.html" class="back-link">
-                                <i class="fas fa-arrow-left"></i> Back to Home
-                            </a>
-                        </div>
-                        <div class="cart-info">
-                            <div class="cart-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span class="cart-count">0</span>
-                            </div>
-                            <div class="coin-balance">
-                                <i class="fas fa-coins"></i>
-                                <span id="coinBalance">0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <main class="game-page">
-                <div class="container">
-                    <div class="game-header">
-                        <img src="${game.logo}" alt="${game.name}" class="game-logo">
-                        <div class="game-info">
-                            <h1>${game.name}</h1>
-                            <p class="game-subtitle">${game.subtitle}</p>
-                            <p class="delivery-time"><i class="fas fa-clock"></i> ${game.deliveryTime}</p>
-                        </div>
-                    </div>
-
-                    <div class="game-content">
-                        <div class="products-section">
-                            <h2>Available Products</h2>
-                            <div class="products-grid">
-                                ${game.products.map(product => `
-                                    <div class="product-card" data-product-id="${product.id}">
-                                        <img src="${product.image}" alt="${product.name}" class="product-image">
-                                        <h3>${product.name}</h3>
-                                        <p class="product-price"><i class="fas fa-coins"></i> ${product.price}</p>
-                                        <button class="btn-add-to-cart" onclick="addToCart(${product.id}, '${product.name}', ${product.price}, '${product.image}')">
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                        <div class="order-details-section">
-                            <h2>Provide Order Details</h2>
-                            <form class="order-form">
-                                <div class="form-group">
-                                    <label for="playerId">Player ID/UID Code *</label>
-                                    <input type="text" id="playerId" name="playerId" placeholder="Enter your Player ID" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="playerName">Player Name (Optional)</label>
-                                    <input type="text" id="playerName" name="playerName" placeholder="Enter your Player Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="additionalNotes">Additional Notes (Optional)</label>
-                                    <textarea id="additionalNotes" name="additionalNotes" placeholder="Any special instructions..."></textarea>
-                                </div>
-                            </form>
-                            
-                            <div class="quick-buy-section">
-                                <h3>Quick Purchase</h3>
-                                <p>Want to buy without adding to cart? Click below to go directly to WhatsApp!</p>
-                                <button id="buyNowBtn" class="btn-buy-now" onclick="buyNowWhatsApp()">
-                                    <i class="fab fa-whatsapp"></i> Buy Now - WhatsApp
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-
-            <!-- Shopping Cart Modal -->
-            <div id="cartModal" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3>Shopping Cart</h3>
-                        <span class="close">&times;</span>
-                    </div>
-                    <div class="modal-body">
-                        <div id="cartItems"></div>
-                        <div class="cart-total">
-                            <h4>Total: <span id="cartTotal">0</span> coins</h4>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="proceedToWhatsApp" class="btn-primary">Proceed to WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <script src="game-script.js"></script>
-        </body>
-        </html>
-    `;
-    
-    // Open in new window or replace current page
-    const newWindow = window.open('', '_blank');
-    newWindow.document.write(gamePageHTML);
-    newWindow.document.close();
+    const targetPage = gamePageMap[gameType];
+    if (targetPage) {
+        // Use window.location.href for better mobile compatibility
+        window.location.href = targetPage;
+    } else {
+        // Fallback - show alert for missing pages
+        alert(`${gameType} page is coming soon! Contact us via WhatsApp for now.`);
+        window.open('https://wa.me/8801757418752', '_blank');
+    }
 }
 
 function addToCart(productId, productName, price, image) {

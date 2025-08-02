@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Force - Items & Currency | A4 GameShop</title>
+    <link rel="stylesheet" href="game-page.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <a href="index.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+                <div class="cart-info">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="coin-balance">
+                        <i class="fas fa-coins"></i>
+                        <span id="coinBalance">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="game-page">
+        <div class="container">
+            <!-- Game Header -->
+            <div class="game-header">
+                <img src="images/DF.png" alt="Delta Force" class="game-logo">
+                <div class="game-info">
+                    <h1>DELTA FORCE</h1>
+                    <p class="game-subtitle">Player ID Topup</p>
+                    <p class="delivery-time"><i class="fas fa-clock"></i> 5-15min</p>
+                </div>
+            </div>
+
+            <div class="game-content">
+                <!-- Products Section -->
+                <div class="products-section">
+                    <h2>Available Products</h2>
+                    <div class="products-grid">
+                        <div class="product-card" data-product-id="25">
+                            <img src="images/DF.png" alt="Delta Force Credits 500" class="product-image">
+                            <h3>Delta Force Credits 500</h3>
+                            <p class="product-price"><i class="fas fa-coins"></i> 450</p>
+                            <button class="btn-add-to-cart" onclick="addToCart(25, 'Delta Force Credits 500', 450, 'images/DF.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card" data-product-id="26">
+                            <img src="images/DF.png" alt="Delta Force Credits 1000" class="product-image">
+                            <h3>Delta Force Credits 1000</h3>
+                            <p class="product-price"><i class="fas fa-coins"></i> 850</p>
+                            <button class="btn-add-to-cart" onclick="addToCart(26, 'Delta Force Credits 1000', 850, 'images/DF.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card" data-product-id="27">
+                            <img src="images/DF.png" alt="Delta Force Credits 2000" class="product-image">
+                            <h3>Delta Force Credits 2000</h3>
+                            <p class="product-price"><i class="fas fa-coins"></i> 1650</p>
+                            <button class="btn-add-to-cart" onclick="addToCart(27, 'Delta Force Credits 2000', 1650, 'images/DF.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card" data-product-id="28">
+                            <img src="images/DF.png" alt="Delta Force Battle Pass" class="product-image">
+                            <h3>Delta Force Battle Pass</h3>
+                            <p class="product-price"><i class="fas fa-coins"></i> 950</p>
+                            <button class="btn-add-to-cart" onclick="addToCart(28, 'Delta Force Battle Pass', 950, 'images/DF.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Details Section -->
+                <div class="order-details-section">
+                    <h2>Provide Order Details</h2>
+                    <form class="order-form">
+                        <div class="form-group">
+                            <label for="playerId">Player ID/UID Code *</label>
+                            <input type="text" id="playerId" name="playerId" placeholder="Enter your Player ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="playerName">Player Name (Optional)</label>
+                            <input type="text" id="playerName" name="playerName" placeholder="Enter your Player Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalNotes">Additional Notes (Optional)</label>
+                            <textarea id="additionalNotes" name="additionalNotes" placeholder="Any special instructions..."></textarea>
+                        </div>
+                    </form>
+                    
+                    <div class="quick-buy-section">
+                        <h3>Quick Purchase</h3>
+                        <p>Want to buy without adding to cart? Click below to go directly to WhatsApp!</p>
+                        <button id="buyNowBtn" class="btn-buy-now" onclick="buyNowWhatsApp()">
+                            <i class="fab fa-whatsapp"></i> Buy Now - WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <h4>Total: <span id="cartTotal">0</span> coins</h4>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="proceedToWhatsApp" class="btn-primary">Proceed to WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game-script.js"></script>
+</body>
+</html>

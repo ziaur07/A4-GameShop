@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercell Games - Gems & Coins | A4 GameShop</title>
+    <link rel="stylesheet" href="game-page.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <a href="index.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+                <div class="cart-info">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="coin-balance">
+                        <i class="fas fa-coins"></i>
+                        <span id="coinBalance">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="game-page">
+        <div class="container">
+            <!-- Game Header -->
+            <div class="game-header">
+                <img src="images/SC.png" alt="Supercell Games" class="game-logo">
+                <div class="game-info">
+                    <h1>SUPERCELL GAMES</h1>
+                    <p class="game-subtitle">Player ID Topup</p>
+                    <p class="delivery-time"><i class="fas fa-clock"></i> 5-15min</p>
+                </div>
+            </div>
+
+            <div class="game-content">
+                <!-- Products Section -->
+                <div class="products-section">
+                    <h2>Available Products</h2>
+                    <div class="products-grid">
+                        <div class="product-card" data-product-id="13">
+                            <img src="images/SC.png" alt="Clash of Clans Gems" class="product-image">
+                            <h3>Clash of Clans - 500 Gems</h3>
+                            <p class="product-price"><i class="fas fa-coins"></i> 350</p>
+                            <button class="btn-add-to-cart" onclick="addToCart(13, 'Clash of Clans - 500 Gems', 350, 'images/SC.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card" data-product-id="14">
+                            <img src="images/SC.png" alt="Clash Royale Gems" class="product-image">
+                            <h3>Clash Royale - 500 Gems</h3>
+                            <p class="product-price"><i class="fas fa-coins"></i> 350</p>
+                            <button class="btn-add-to-cart" onclick="addToCart(14, 'Clash Royale - 500 Gems', 350, 'images/SC.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card" data-product-id="15">
+                            <img src="images/SC.png" alt="Brawl Stars Gems" class="product-image">
+                            <h3>Brawl Stars - 170 Gems</h3>
+                            <p class="product-price"><i class="fas fa-coins"></i> 300</p>
+                            <button class="btn-add-to-cart" onclick="addToCart(15, 'Brawl Stars - 170 Gems', 300, 'images/SC.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card" data-product-id="16">
+                            <img src="images/SC.png" alt="Boom Beach Diamonds" class="product-image">
+                            <h3>Boom Beach - 500 Diamonds</h3>
+                            <p class="product-price"><i class="fas fa-coins"></i> 400</p>
+                            <button class="btn-add-to-cart" onclick="addToCart(16, 'Boom Beach - 500 Diamonds', 400, 'images/SC.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Details Section -->
+                <div class="order-details-section">
+                    <h2>Provide Order Details</h2>
+                    <form class="order-form">
+                        <div class="form-group">
+                            <label for="playerId">Player ID/UID Code *</label>
+                            <input type="text" id="playerId" name="playerId" placeholder="Enter your Player ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="playerName">Player Name (Optional)</label>
+                            <input type="text" id="playerName" name="playerName" placeholder="Enter your Player Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="gameType">Select Game</label>
+                            <select id="gameType" name="gameType" required>
+                                <option value="">Choose Game</option>
+                                <option value="clash-of-clans">Clash of Clans</option>
+                                <option value="clash-royale">Clash Royale</option>
+                                <option value="brawl-stars">Brawl Stars</option>
+                                <option value="boom-beach">Boom Beach</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalNotes">Additional Notes (Optional)</label>
+                            <textarea id="additionalNotes" name="additionalNotes" placeholder="Any special instructions..."></textarea>
+                        </div>
+                    </form>
+                    
+                    <div class="quick-buy-section">
+                        <h3>Quick Purchase</h3>
+                        <p>Want to buy without adding to cart? Click below to go directly to WhatsApp!</p>
+                        <button id="buyNowBtn" class="btn-buy-now" onclick="buyNowWhatsApp()">
+                            <i class="fab fa-whatsapp"></i> Buy Now - WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <h4>Total: <span id="cartTotal">0</span> coins</h4>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="proceedToWhatsApp" class="btn-primary">Proceed to WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game-script.js"></script>
+</body>
+</html>
