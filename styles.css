@@ -969,14 +969,15 @@ body {
     
     .carousel-navigation {
         padding: 0 -5px;
+        top: 75%; /* Move arrows down from 50% to 60% */
     }
     
     .carousel-arrow-prev {
-        left: -30px;
+        left: 10px; /* Bring arrows closer to content */
     }
     
     .carousel-arrow-next {
-        right: -30px;
+        right: 10px; /* Bring arrows closer to content */
     }
 }
 
