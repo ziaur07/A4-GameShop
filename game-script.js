@@ -94,7 +94,7 @@ function updateCartDisplay() {
                         </div>
                     </div>
                     <div style="text-align: right;">
-                        <div class="cart-item-price">${item.price * item.quantity} coins</div>
+                        <div class="cart-item-price">৳${item.price * item.quantity}</div>
                         <button onclick="removeFromCart(${item.id})" style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 5px; transition: all 0.3s ease;">Remove</button>
                     </div>
                 `;
@@ -158,11 +158,11 @@ function proceedToWhatsApp() {
         const itemTotal = item.price * item.quantity;
         totalAmount += itemTotal;
         orderDetails += `${index + 1}. **${item.name}**\n`;
-        orderDetails += `   💰 ${item.price} coins × ${item.quantity} = *${itemTotal} coins*\n\n`;
+        orderDetails += `   💰 ৳${item.price} × ${item.quantity} = *৳${itemTotal}*\n\n`;
     });
     
     orderDetails += "═══════════════════════\n";
-    orderDetails += `💳 **TOTAL AMOUNT: ${totalAmount} coins**\n`;
+    orderDetails += `💳 **TOTAL AMOUNT: ৳${totalAmount}**\n`;
     orderDetails += "═══════════════════════\n\n";
     
     // Add additional notes

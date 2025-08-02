@@ -52,18 +52,6 @@ const gameData = {
             { id: 20, name: "Netflix 12 Months", price: 12000, image: "images/netflix.jpg" }
         ]
     },
-    unipin: {
-        name: "UniPin Voucher",
-        subtitle: "Gaming Credits",
-        deliveryTime: "Instant",
-        logo: "images/UP.jpg",
-        products: [
-            { id: 21, name: "UniPin 50,000 Credits", price: 500, image: "images/UP.jpg" },
-            { id: 22, name: "UniPin 100,000 Credits", price: 1000, image: "images/UP.jpg" },
-            { id: 23, name: "UniPin 200,000 Credits", price: 2000, image: "images/UP.jpg" },
-            { id: 24, name: "UniPin 500,000 Credits", price: 5000, image: "images/UP.jpg" }
-        ]
-    },
     deltaforce: {
         name: "Delta Force",
         subtitle: "Items & Currency",
@@ -74,18 +62,6 @@ const gameData = {
             { id: 26, name: "Weapon Skin Pack", price: 600, image: "images/DF.png" },
             { id: 27, name: "Character Bundle", price: 1200, image: "images/DF.png" },
             { id: 28, name: "Premium Currency 1000", price: 1000, image: "images/DF.png" }
-        ]
-    },
-    bloodstrike: {
-        name: "Blood Strike",
-        subtitle: "Items & Currency",
-        deliveryTime: "5-10min",
-        logo: "images/BS.jpg",
-        products: [
-            { id: 29, name: "Gold Pass", price: 750, image: "images/BS.jpg" },
-            { id: 30, name: "Weapon Crate", price: 400, image: "images/BS.jpg" },
-            { id: 31, name: "Character Skin", price: 600, image: "images/BS.jpg" },
-            { id: 32, name: "Premium Coins 500", price: 500, image: "images/BS.jpg" }
         ]
     },
     pubgvoucher: {
@@ -170,20 +146,10 @@ const serviceData = {
         desc: 'Premium Subscriptions',
         badge: '📺 HD Streaming'
     },
-    unipin: {
-        title: 'UniPin Voucher',
-        desc: 'Gaming Credits & Vouchers',
-        badge: '🎫 All Platforms'
-    },
     deltaforce: {
         title: 'Delta Force',
         desc: 'Items & Currency',
         badge: '⚔️ Combat Ready'
-    },
-    bloodstrike: {
-        title: 'Blood Strike',
-        desc: 'Gold Pass & Weapons',
-        badge: '🩸 Action Packed'
     },
     pubgvoucher: {
         title: 'PUBG Voucher',
@@ -310,9 +276,7 @@ function openGamePage(gameType) {
         'freefire': 'freefire.html',
         'supercell': 'supercell.html',
         'netflix': 'netflix.html',
-        'unipin': 'unipin.html',
         'deltaforce': 'deltaforce.html',
-        'bloodstrike': 'bloodstrike.html',
         'pubgvoucher': 'pubgvoucher.html'
     };
     
