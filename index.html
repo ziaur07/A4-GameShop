@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A4 GameShop - Digital Gaming Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <a href="https://wa.me/8801757418752" class="whatsapp-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+
+                </div>
+                <div class="cart-info">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="coin-balance">
+                        <i class="fas fa-coins"></i>
+                        <span id="coinBalance">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h1>A4 GameShop</h1>
+                    <p>বিশ্বের A to Z গেমিং সেবা এক ঠিকানায়</p>
+                    <p>Gaming Services Made Easy</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Games Supported</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-carousel-modern">
+                    <!-- Phone Mockup Container -->
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <div class="phone-content">
+                                    <!-- Rating Display -->
+                                    <div class="rating-display">
+                                        <div class="rating-stars">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="rating-text">Excellent Service!</p>
+                                        <small>Based on 1000+ reviews</small>
+                                    </div>
+                                    
+                                    <!-- Service Preview -->
+                                    <div class="service-preview">
+                                        <h3 id="activeServiceTitle">PUBG Mobile</h3>
+                                        <p id="activeServiceDesc">UC & Prime Plus Available</p>
+                                        <div class="service-badge">
+                                            <span>⚡ Instant Delivery</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Game Icons -->
+                    <div class="floating-icons">
+                        <div class="game-icon icon-1 active" data-service="pubg">
+                            <img src="images/pubg.jpg" alt="PUBG">
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-icon icon-2" data-service="freefire">
+                            <img src="images/ff.png" alt="Free Fire">
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-icon icon-3" data-service="supercell">
+                            <img src="images/SC.png" alt="Supercell">
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-icon icon-4" data-service="netflix">
+                            <img src="images/netflix.jpg" alt="Netflix">
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-icon icon-5" data-service="unipin">
+                            <img src="images/UP.jpg" alt="UniPin">
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-icon icon-6" data-service="deltaforce">
+                            <img src="images/DF.png" alt="Delta Force">
+                            <div class="icon-glow"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Dots -->
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <div class="carousel-navigation">
+                        <button class="carousel-arrow carousel-arrow-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-arrow carousel-arrow-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Dots Navigation -->
+                    <div class="modern-carousel-dots">
+                        <span class="modern-dot active" data-service="pubg"></span>
+                        <span class="modern-dot" data-service="freefire"></span>
+                        <span class="modern-dot" data-service="supercell"></span>
+                        <span class="modern-dot" data-service="netflix"></span>
+                        <span class="modern-dot" data-service="unipin"></span>
+                        <span class="modern-dot" data-service="deltaforce"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="hero-bg-elements">
+            <div class="bg-circle circle-1"></div>
+            <div class="bg-circle circle-2"></div>
+            <div class="bg-circle circle-3"></div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Services Grid -->
+            <section class="services-grid">
+                <h2>Popular Games & Services</h2>
+                <div class="grid">
+                    <!-- Free Fire -->
+                    <div class="service-card" data-game="freefire">
+                        <div class="service-icon">
+                            <img src="images/ff.png" alt="Free Fire">
+                        </div>
+                        <h3>Free Fire</h3>
+                        <p>Diamonds & Items</p>
+                    </div>
+
+                    <!-- PUBG Mobile -->
+                    <div class="service-card" data-game="pubg">
+                        <div class="service-icon">
+                            <img src="images/pubg.jpg" alt="PUBG Mobile">
+                        </div>
+                        <h3>PUBG MOBILE</h3>
+                        <p>UC & Prime Plus</p>
+                    </div>
+
+                    <!-- Supersell All Game -->
+                    <div class="service-card" data-game="supercell">
+                        <div class="service-icon">
+                            <img src="images/SC.png" alt="Supercell">
+                        </div>
+                        <h3>SUPERSELL ALL GAME</h3>
+                        <p>Gems & Coins</p>
+                    </div>
+
+                    <!-- Delta Force -->
+                    <div class="service-card" data-game="deltaforce">
+                        <div class="service-icon">
+                            <img src="images/DF.png" alt="Delta Force">
+                        </div>
+                        <h3>Delta Force</h3>
+                        <p>Items & Currency</p>
+                    </div>
+
+                    <!-- Netflix -->
+                    <div class="service-card" data-game="netflix">
+                        <div class="service-icon">
+                            <img src="images/netflix.jpg" alt="Netflix">
+                        </div>
+                        <h3>Netflix</h3>
+                        <p>Subscriptions</p>
+                    </div>
+
+                    <!-- UniPin Voucher -->
+                    <div class="service-card" data-game="unipin">
+                        <div class="service-icon">
+                            <img src="images/UP.jpg" alt="UniPin">
+                        </div>
+                        <h3>UNIPIN VOUCHER</h3>
+                        <p>Gaming Credits</p>
+                    </div>
+
+                    <!-- Blood Strike -->
+                    <div class="service-card" data-game="bloodstrike">
+                        <div class="service-icon">
+                            <img src="images/BS.jpg" alt="Blood Strike">
+                        </div>
+                        <h3>Blood Strike</h3>
+                        <p>Items & Currency</p>
+                    </div>
+
+                    <!-- PUBG Voucher -->
+                    <div class="service-card" data-game="pubgvoucher">
+                        <div class="service-icon">
+                            <img src="images/pubg voucher.png" alt="PUBG Voucher">
+                        </div>
+                        <h3>PUBG VOUCHER</h3>
+                        <p>UC Vouchers</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <h2 style="color: #40e0d0; font-size: 2rem; margin-bottom: 20px; background: linear-gradient(45deg, #40e0d0, #7fffd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">A4 GameShop</h2>
+                    </div>
+                    <div class="contact-details">
+                        <p><i class="fas fa-clock"></i> 9AM - 11PM</p>
+                        <p><i class="fas fa-phone"></i> +8801757418752</p>
+                        <p><i class="fab fa-whatsapp"></i> +8801757418752</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>USEFUL LINKS</h4>
+                    <ul>
+                        <li><a href="https://wa.me/8801757418752">Contact us</a></li>
+                        <li><a href="#how-it-works">How it Works</a></li>
+                        <li><a href="#create">Create</a></li>
+                        <li><a href="#explore">Explore</a></li>
+                        <li><a href="#terms">Terms & Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>COMMUNITY</h4>
+                    <div class="community-links">
+                        <a href="#"><i class="fas fa-home"></i> Home</a>
+                        <a href="#"><i class="fas fa-shopping-bag"></i> Orders</a>
+                       
+                    </div>
+                    <ul>
+                        <li><a href="#suggestions">Suggestions</a></li>
+                        <li><a href="#discord">Discord</a></li>
+                        <li><a href="#newsletter">Newsletters</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>SUBSCRIBE NEWSLETTER</h4>
+                    <p>A new way to make the payments easy, reliable and 100% secure. Clariatis est processus dynamicus, quam littera.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2024 A4 GameShop All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <h4>Total: <span id="cartTotal">0</span> coins</h4>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="proceedToWhatsApp" class="btn-primary">Proceed to WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
